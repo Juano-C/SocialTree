@@ -1,15 +1,11 @@
-import express from 'express' // ECM ecmascript modules
+import colors from 'colors'
+import server from "./server"
 
-const app = express()
+//puerto
+const port = process.env.PORT || 4001
 
-// Routing: ventanas de la pagina principal '/' en "app"
-app.get('/', (req, res) => {
-    res.send('ventana princial')
+server.listen(port, () => {
+    console.log(colors.magenta.bold  (`Servidor Funcionando en el puerto: ${port}`))
 })
 
-//puerto 
-const port = process.env.PORT || 4000
-
-app.listen(port, () => {
-    console.log('Servidor Funcionando en el puerto:', port)
-})
+const numbers = [10, 20, 30]
